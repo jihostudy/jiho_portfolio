@@ -30,10 +30,10 @@ const EXTERNAL_LINKS = {
 }
 const About = ({ className }: AboutProps): ReactNode => {
   return (
-    <section className={cn(className, 'grid grid-cols-[3fr,7fr] grid-rows-1 gap-6')}>
+    <section className={cn(className, 'grid grid-cols-1 gap-10 lg:grid-cols-[3fr,7fr] lg:grid-rows-1 lg:gap-6')}>
       <div className='flex w-full flex-col items-center justify-start'>
-        <Image alt='profile-image' src={ProfileImage} className='w-full rounded-2xl' />
-        <nav className='mt-4 flex items-center justify-center gap-8 font-bold'>
+        <Image alt='profile-image' src={ProfileImage} className='w-3/5 min-w-44 lg:w-full lg:rounded-2xl' />
+        <nav className='mt-4 flex items-center justify-center gap-8 text-xs font-bold lg:text-base'>
           <Link
             href={EXTERNAL_LINKS.github}
             target='_blank'
@@ -53,15 +53,15 @@ const About = ({ className }: AboutProps): ReactNode => {
         </nav>
       </div>
       <div className='w-full'>
-        <p className='font-montserrat text-2xl font-bold'>About Me</p>
+        <p className='font-montserrat text-lg font-bold lg:text-2xl'>About Me</p>
         <ul className='mt-4 flex flex-col items-start justify-start gap-2'>
           {INTRODUCE.map((introduce, index) => (
-            <li key={index} className='text-lg'>
+            <li key={index} className='text-sm lg:text-lg'>
               {introduce}
             </li>
           ))}
         </ul>
-        <ul className='mt-16 grid grid-cols-2 grid-rows-2 gap-y-6'>
+        <ul className='mt-16 grid grid-cols-1 gap-y-6 lg:grid-cols-2 lg:grid-rows-2'>
           <li className='flex items-center gap-6'>
             <div className='flex min-w-14 flex-col items-center justify-between gap-2 text-xs font-bold'>
               <LucideIcon name='Pencil' strokeWidth={3} />
