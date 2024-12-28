@@ -1,9 +1,17 @@
 import React, { ReactNode } from 'react'
 
+const Links = ['About me', 'Skills', 'Projects', 'Contact']
 const Header = (): ReactNode => {
   return (
-    <header className='border-grey bg-white01 sticky top-0 z-10 flex h-16 w-full items-center justify-center border-b border-solid px-6'>
-      <p className='text-t2 flex h-full w-full max-w-xs items-center justify-start font-bold md:max-w-5xl'>JIHOSTUDY</p>
+    <header className='bg-jhWhite01 sticky top-0 z-10 mx-auto flex h-16 w-full items-center justify-between backdrop-blur-sm md:max-w-5xl'>
+      <p className='font-bebas flex h-full w-max max-w-xs items-center justify-start text-3xl'>JIHOSTUDY</p>
+      <nav className='font-montserrat font-semibold'>
+        <ul className='flex items-center justify-evenly gap-6 text-lg'>
+          {Links.map(link => (
+            <li key={link}>{link}</li>
+          ))}
+        </ul>
+      </nav>
     </header>
   )
 }
