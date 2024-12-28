@@ -13,7 +13,7 @@ const Header = (): ReactNode => {
       )}
     >
       <p className='font-bebas flex h-full w-max max-w-xs items-center justify-start text-3xl'>JIHOSTUDY</p>
-      <nav className='font-montserrat hidden font-semibold md:block'>
+      <nav className='font-montserrat hidden font-semibold lg:block'>
         <ul className='flex items-center justify-evenly gap-6 text-lg'>
           {Links.map(link => (
             <li key={link}>{link}</li>
