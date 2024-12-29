@@ -1,13 +1,12 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { ReactNode } from 'react'
 
-import ProfileImage from '@public/image/profile_image.jpg'
-import GithubImage from '@public/image/github.png'
-import TistoryImage from '@public/image/tistory.png'
-
-import { cn } from '@lib/utils'
 import LucideIcon from '@lib/icons/LucideIcon'
-import Link from 'next/link'
+import { cn } from '@lib/utils'
+import GithubImage from '@public/image/github.png'
+import ProfileImage from '@public/image/profile_image.jpg'
+import TistoryImage from '@public/image/tistory.png'
 
 interface AboutProps {
   className?: string

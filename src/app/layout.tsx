@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
+import { cn } from '@lib/utils'
 import { bebasNeue, montserrat, pretendard } from '@public/fonts/font'
 
-import './globals.css'
-import { cn } from '@lib/utils'
 import Header from '../components/common/Header'
+
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'jihostudy',
