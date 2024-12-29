@@ -53,6 +53,11 @@ export const FrontendSkills: SkillType[] = [
     textColor: '#ffffff',
   },
   {
+    name: 'Axios',
+    bgColor: '#4C6DE2',
+    textColor: '#ffffff',
+  },
+  {
     name: 'Tanstack Query(v5)',
     bgColor: '#E73A56',
     textColor: '#ffffff',

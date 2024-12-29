@@ -8,8 +8,6 @@ interface SkillsProps {
 }
 
 const Skills = ({ className }: SkillsProps): ReactNode => {
-  // Styles
-  const skillStyle = ''
   return (
     <section className={cn(className, 'flex flex-col items-center justify-start')}>
       <p className='font-montserrat text-lg font-bold lg:text-2xl'>Skills</p>

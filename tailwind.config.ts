@@ -67,6 +67,9 @@ const config = {
         bebas: ['var(--font-bebas)'],
         montserrat: ['var(--font-montserrat)'],
       },
+      aspectRatio: {
+        '3/2': '3 / 2',
+      },
     },
   },
   plugins: [tailwindcssAnimate],
