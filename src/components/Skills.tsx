@@ -24,7 +24,7 @@ const Skills = ({ className }: SkillsProps): ReactNode => {
                   backgroundColor: skill.bgColor,
                   color: skill.textColor,
                 }}
-                className='rounded-lg px-4 py-2'
+                className='rounded-lg px-4 py-[6px]'
               >
                 {skill.name}
               </span>
@@ -42,7 +42,7 @@ const Skills = ({ className }: SkillsProps): ReactNode => {
                   backgroundColor: skill.bgColor,
                   color: skill.textColor,
                 }}
-                className='rounded-lg px-4 py-2'
+                className='rounded-lg px-4 py-[6px]'
               >
                 {skill.name}
               </span>
@@ -60,7 +60,7 @@ const Skills = ({ className }: SkillsProps): ReactNode => {
                   backgroundColor: skill.bgColor,
                   color: skill.textColor,
                 }}
-                className='rounded-lg px-4 py-2'
+                className='rounded-lg px-4 py-[6px]'
               >
                 {skill.name}
               </span>
@@ -78,7 +78,7 @@ const Skills = ({ className }: SkillsProps): ReactNode => {
                   backgroundColor: skill.bgColor,
                   color: skill.textColor,
                 }}
-                className='rounded-lg px-4 py-2'
+                className='rounded-lg px-4 py-[6px]'
               >
                 {skill.name}
               </span>
