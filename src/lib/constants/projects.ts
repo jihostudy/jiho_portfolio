@@ -12,7 +12,6 @@ import ThumbNailImageNetwork from '@public/image/projects/p8-network/thumbnail.p
 import ThumbNailImageKakao from '@public/image/projects/p9-kakaotalk/thumbnail.png'
 import FastAPIIcon from '@public/image/stacks/backend/fastapi.png'
 import FirebaseIcon from '@public/image/stacks/backend/firebase.webp'
-import MySQLIcon from '@public/image/stacks/backend/mysql.png'
 import FramerMotionIcon from '@public/image/stacks/frontend/framer-motion.svg'
 import NextJSIcon from '@public/image/stacks/frontend/nextjs.svg'
 import ReactIcon from '@public/image/stacks/frontend/react.png'
@@ -37,7 +36,7 @@ const project_portfolio: ProjectType = {
   title: 'Portfolio',
   duration: '24. 12 ~ 진행 중',
   description: '개인 포토폴리오 웹사이트',
-  stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FastAPIIcon, MySQLIcon, TanstackQueryIcon],
+  stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FirebaseIcon, TanstackQueryIcon],
   isWebProject: true,
 }
 
