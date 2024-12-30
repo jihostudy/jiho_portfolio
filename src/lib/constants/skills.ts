@@ -87,6 +87,29 @@ export const BackendSkills: SkillType[] = [
   },
 ]
 
+export const DevSkills: SkillType[] = [
+  {
+    name: 'Prettier',
+    bgColor: '#6BB4B3',
+    textColor: '#ffffff',
+  },
+  {
+    name: 'ESLint',
+    bgColor: '#4E35C3',
+    textColor: '#ffffff',
+  },
+  {
+    name: 'Vite',
+    bgColor: '#9183FE',
+    textColor: '#ffffff',
+  },
+  {
+    name: 'pnpm',
+    bgColor: '#E7A717',
+    textColor: '#000000',
+  },
+]
+
 export const TeamworkSkills: SkillType[] = [
   {
     name: 'Git',

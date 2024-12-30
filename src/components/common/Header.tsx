@@ -7,7 +7,7 @@ const Header = (): ReactNode => {
   return (
     <header
       className={cn(
-        'sticky top-0 z-10 mx-auto flex h-16 items-center justify-between bg-jhWhite01 px-6 backdrop-blur-sm',
+        'fixed top-0 z-10 mx-auto flex h-[10dvh] items-center justify-between px-6 backdrop-blur-sm',
         'w-full max-w-xl md:max-w-4xl lg:max-w-7xl',
       )}
     >
@@ -15,7 +15,9 @@ const Header = (): ReactNode => {
       <nav className='hidden font-montserrat font-semibold lg:block'>
         <ul className='flex items-center justify-evenly gap-6 text-lg'>
           {Links.map(link => (
-            <li key={link}>{link}</li>
+            <li key={link} className='cursor-pointer'>
+              {link}
+            </li>
           ))}
         </ul>
       </nav>

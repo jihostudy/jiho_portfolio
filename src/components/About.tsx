@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react'
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
 import GithubImage from '@public/image/github.png'
-import ProfileImage from '@public/image/profile_image.jpg'
+import ProfileImage from '@public/image/profile_image.svg'
 import TistoryImage from '@public/image/tistory.png'
 
 interface AboutProps {
