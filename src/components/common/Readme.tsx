@@ -102,7 +102,7 @@ const DescriptionSection = ({ title, description, icon, className }: Description
         {icon}
         <span className='text-lg font-bold lg:text-2xl'>{title}</span>
       </div>
-      <span className='ml-4 text-pretty'>{description}</span>
+      <span dangerouslySetInnerHTML={{ __html: description }} className='ml-4 text-pretty' />
     </div>
   )
 }
