@@ -17,64 +17,64 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
     return (
       <div
         ref={ref}
-        className='scrollbar-hide fixed top-1/2 z-30 h-[90dvh] w-1/2 -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black'
+        className='h-9/10 scrollbar-hide fixed top-1/2 z-30 w-[90%] -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black lg:w-1/2 lg:min-w-[700px]'
       >
-        <div className='sticky top-0 flex items-center justify-between rounded-t-xl bg-jhBlack01 px-5 py-3'>
-          <span className='text-xl font-bold text-jhWhite01'>Readme.md</span>
+        <div className='sticky top-0 z-10 flex items-center justify-between rounded-t-xl bg-jhBlack01 px-5 py-3'>
+          <span className='text-base font-bold text-jhWhite01 lg:text-xl'>Readme.md</span>
           <LucideIcon name='X' onClick={handleClose} className='text-jhWhite01' size={26} />
         </div>
 
         <div className='flex flex-col items-start justify-start bg-jhWhite01 px-7 pb-3 pt-4'>
           <div className='flex items-end justify-start gap-6'>
-            <span className='text-2xl font-bold'>{title}</span>
-            <span className='text-sm'>{duration}</span>
+            <span className='w-max text-lg font-bold lg:text-2xl'>{title}</span>
+            <span className='text-xs lg:text-sm'>{duration}</span>
           </div>
 
           <div className='flex items-center justify-start gap-6 py-4'>
             <Link href={url} target='_blank' className='flex items-center justify-center gap-2'>
               <LucideIcon name='Link' />
-              <span className='text-jhBlue02'>배포 URL</span>
+              <span className='text-jhBlue02 text-xs lg:text-base'>배포 URL</span>
             </Link>
             <Link href={github} target='_blank' className='flex items-center justify-center gap-2'>
               <LucideIcon name='Github' />
-              <span>깃허브</span>
+              <span className='text-xs lg:text-base'>깃허브</span>
             </Link>
           </div>
 
-          <div className='mb-6 h-[1px] w-full bg-jhBlack01' />
+          <div className='h-[1px] w-full bg-jhBlack01 lg:mb-6' />
 
           <DescriptionSection
             title='Background'
             description={background}
-            icon={<LucideIcon size={30} name='CircleHelp' />}
+            icon={<LucideIcon name='CircleHelp' className='h-6 w-6 md:h-8 md:w-8 2xl:h-10 2xl:w-10' />}
             className='my-5'
           />
 
           <ContributionSection
             title='Contribution'
             data={contribution}
-            icon={<LucideIcon size={30} name='Keyboard' />}
+            icon={<LucideIcon name='Keyboard' className='h-6 w-6 md:h-8 md:w-8 2xl:h-10 2xl:w-10' />}
             className='my-5'
           />
 
           <DescriptionSection
             title='Report'
             description={report}
-            icon={<LucideIcon size={30} name='Layers' />}
+            icon={<LucideIcon name='Layers' className='h-6 w-6 md:h-8 md:w-8 2xl:h-10 2xl:w-10' />}
             className='my-5'
           />
 
           <DescriptionSection
             title='Technology Stacks'
             description={stacks}
-            icon={<LucideIcon size={30} name='Layers' />}
+            icon={<LucideIcon name='Layers' className='h-6 w-6 md:h-8 md:w-8 2xl:h-10 2xl:w-10' />}
             className='my-5'
           />
 
           <TeamMemberSection
             title='Team Members'
             data={members}
-            icon={<LucideIcon size={30} name='Users' />}
+            icon={<LucideIcon name='Users' className='h-6 w-6 md:h-8 md:w-8 2xl:h-10 2xl:w-10' />}
             className='my-5'
           />
         </div>
@@ -100,7 +100,7 @@ const DescriptionSection = ({ title, description, icon, className }: Description
     <div className={cn(className, 'flex flex-col items-start justify-start gap-3')}>
       <div className='flex items-center justify-start gap-2'>
         {icon}
-        <span className='text-2xl font-bold'>{title}</span>
+        <span className='text-lg font-bold lg:text-2xl'>{title}</span>
       </div>
       <span className='ml-4 text-pretty'>{description}</span>
     </div>
@@ -119,7 +119,7 @@ const ContributionSection = ({ title, icon, data, className }: ContributionSecti
     <div className={cn(className, 'flex w-full flex-col items-start justify-start gap-3')}>
       <div className='flex items-center justify-start gap-2'>
         {icon}
-        <span className='text-2xl font-bold'>{title}</span>
+        <span className='text-lg font-bold lg:text-2xl'>{title}</span>
       </div>
 
       <div className='relative ml-2 flex w-full flex-col gap-4'>
@@ -152,7 +152,7 @@ const TeamMemberSection = ({ title, icon, data, className }: TeamMemberSectionPr
     <div className={cn(className, 'flex w-full flex-col items-start justify-start gap-3')}>
       <div className='flex items-center justify-start gap-2'>
         {icon}
-        <span className='text-2xl font-bold'>{title}</span>
+        <span className='text-lg font-bold lg:text-2xl'>{title}</span>
       </div>
 
       <ul className='relative ml-2 flex w-full list-inside list-disc flex-col gap-2'>

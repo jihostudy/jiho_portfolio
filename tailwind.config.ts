@@ -71,6 +71,10 @@ const config = {
         bebas: ['var(--font-bebas)'],
         montserrat: ['var(--font-montserrat)'],
       },
+      height: {
+        '9/10': '90dvh',
+      },
+
       aspectRatio: {
         '3/2': '3 / 2',
       },
