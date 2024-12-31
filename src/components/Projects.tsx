@@ -2,9 +2,10 @@
 import Image from 'next/image'
 import React, { ReactNode, useState } from 'react'
 
-import { PROJECTS, ProjectType } from '@lib/constants/projects'
+import useReadmeModal from '@lib/hooks/useReadmeModal'
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
+import { PROJECTS, ProjectType } from '@public/data/project/projects'
 
 interface ProjectsProps {
   className?: string
@@ -13,6 +14,7 @@ interface ProjectsProps {
 const Projects = ({ className }: ProjectsProps): ReactNode => {
   const [checked, setChecked] = useState<boolean>(true)
 
+  const { isOpen, handleOpen, Modal } = useReadmeModal()
   //Functions
   const toggleChecked = () => {
     setChecked(prev => !prev)
@@ -24,6 +26,7 @@ const Projects = ({ className }: ProjectsProps): ReactNode => {
         <ProjectCard
           key={index}
           data={project}
+          onClick={() => handleOpen(project.modalDetails)}
           className='cursor-pointer overflow-hidden rounded-lg shadow-md hover:scale-105'
         />
       )
@@ -44,6 +47,7 @@ const Projects = ({ className }: ProjectsProps): ReactNode => {
       </div>
 
       <ul className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>{ProjectList}</ul>
+      <Modal />
     </section>
   )
 }
@@ -52,12 +56,14 @@ export default Projects
 
 interface ProjectCardProps {
   data: ProjectType
+  onClick: () => void
   className?: string
 }
-const ProjectCard = ({ data, className }: ProjectCardProps): ReactNode => {
+const ProjectCard = ({ data, onClick, className }: ProjectCardProps): ReactNode => {
   const { thumbnail, title, duration, description, stacks } = data
+
   return (
-    <li className={cn('relative flex flex-col items-start justify-start', className)}>
+    <li onClick={onClick} className={cn('relative flex flex-col items-start justify-start', className)}>
       <Image alt='project-thumbnail' src={thumbnail} className='aspect-3/2 w-full object-cover object-top' />
 
       <div className='flex flex-col items-start justify-start px-4 pb-4 pt-6'>

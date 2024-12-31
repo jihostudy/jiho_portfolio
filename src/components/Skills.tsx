@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import { BackendSkills, DevSkills, FrontendSkills, LanguageSkills, TeamworkSkills } from '@lib/constants/skills'
+import { BackendSkills, DevSkills, FrontendSkills, LanguageSkills, TeamworkSkills } from '@public/data/skills'
 import { cn } from '@lib/utils'
 
 interface SkillsProps {

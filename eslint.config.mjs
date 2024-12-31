@@ -14,7 +14,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  { ignores: ['.next', 'public'] },
+  { ignores: ['.next'] },
   {
     plugins: { 'simple-import-sort': simpleImportSort, 'unused-imports': unusedImport }, // 플러그인 추가
 

@@ -56,6 +56,9 @@ const config = {
         jhBazy01: '#FFEFCA',
         jhPurple01: '#F7E7FF',
         jhBlue01: '#D4E5FF',
+        jhBlue02: '#0277FF',
+        jhBackdrop01: '#00000066',
+        jhGray01: '#E7E5E4',
       },
       borderRadius: {
         lg: 'var(--radius)',
