@@ -3,7 +3,7 @@ import { useOnClickOutside } from 'usehooks-ts'
 
 import Backdrop from '@components/common/Backdrop'
 import Readme from '@components/common/Readme'
-import { ProjectDetailType } from '@public/data/project/deatils'
+import { ProjectDetailType } from '@public/data/project/details'
 
 import useScrollLock from './useScrollLock'
 

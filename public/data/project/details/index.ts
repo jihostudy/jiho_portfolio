@@ -4,7 +4,7 @@ export type ContributionType = {
 }
 export type MembersType = {
   frontend: string
-  backend: string
+  backend?: string
   AI?: string
 }
 

@@ -3,7 +3,7 @@ import React, { forwardRef, ReactNode } from 'react'
 
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
-import { ContributionType, MembersType, ProjectDetailType } from '@public/data/project/deatils'
+import { ContributionType, MembersType, ProjectDetailType } from '@public/data/project/details'
 
 interface ReadmeProps {
   data: ProjectDetailType | undefined
@@ -157,7 +157,7 @@ const TeamMemberSection = ({ title, icon, data, className }: TeamMemberSectionPr
 
       <ul className='relative ml-2 flex w-full list-inside list-disc flex-col gap-2'>
         <li className='pl-4'>Frontend: {data.frontend}</li>
-        <li className='pl-4'>Backend: {data.backend}</li>
+        {data.backend && <li className='pl-4'>Backend: {data.backend}</li>}
         {data.AI && <li>AI: {data.AI}</li>}
       </ul>
     </div>

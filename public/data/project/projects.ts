@@ -21,8 +21,9 @@ import ZustandIcon from '@public/image/stacks/frontend/zustand.webp'
 import CIcon from '@public/image/stacks/language/c.png'
 import JavascriptIcon from '@public/image/stacks/language/javascript.png'
 import TypescriptIcon from '@public/image/stacks/language/typescript.png'
-import { ProjectDetailType } from './deatils'
-import { details as PortfolioDetails } from './deatils/portfolio'
+import { ProjectDetailType } from './details'
+import { details as TraBookDetails } from './details/trabook'
+import { details as PortfolioDetails } from './details/portfolio'
 
 export type ProjectType = {
   thumbnail: StaticImageData
@@ -60,7 +61,7 @@ const project_trabook: ProjectType = {
   description: '관광데이터 활용 공모전 참가 프로젝트',
   stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, TanstackQueryIcon, ZustandIcon, FramerMotionIcon],
   isWebProject: true,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 const project_concour: ProjectType = {
@@ -70,7 +71,7 @@ const project_concour: ProjectType = {
   description: '성균관대학교 무용학과 콩쿨 접수 • 공지 사이트',
   stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FirebaseIcon, ZustandIcon],
   isWebProject: true,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 const project_gallery: ProjectType = {
@@ -80,7 +81,7 @@ const project_gallery: ProjectType = {
   description: '개발 동아리 홍보 및 주점 이벤트 사이트',
   stacks: [JavascriptIcon, ReactIcon, TailwindCSSIcon, FirebaseIcon],
   isWebProject: true,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 const project_catch: ProjectType = {
@@ -90,7 +91,7 @@ const project_catch: ProjectType = {
   description: '대학로 행사 및 학회 전시 프로젝트',
   stacks: [JavascriptIcon, ReactIcon, FramerMotionIcon],
   isWebProject: true,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 const project_vscode: ProjectType = {
@@ -100,7 +101,7 @@ const project_vscode: ProjectType = {
   description: '개발자를 위한 VSCode 형태의 블로그 템플릿',
   stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FirebaseIcon, ZustandIcon],
   isWebProject: true,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 // 웹 프로젝트 외
@@ -111,7 +112,7 @@ const project_xv6: ProjectType = {
   description: 'MIT의 학습용 OS인 xv6 기능을 수정 • 강화',
   stacks: [CIcon],
   isWebProject: false,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 const project_ipv4: ProjectType = {
@@ -121,7 +122,7 @@ const project_ipv4: ProjectType = {
   description: 'WireShark를 이용하여 IPv4 • Ipv6 패킷 분석, DNS통신 및 소켓 프로그래밍 구현',
   stacks: [CIcon],
   isWebProject: false,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 const project_kakaotalk: ProjectType = {
@@ -131,7 +132,7 @@ const project_kakaotalk: ProjectType = {
   description: '풀스택 카카오톡 클론 코딩',
   stacks: [JavascriptIcon, FastAPIIcon],
   isWebProject: false,
-  modalDetails: PortfolioDetails,
+  modalDetails: TraBookDetails,
 }
 
 export const PROJECTS: ProjectType[] = [
