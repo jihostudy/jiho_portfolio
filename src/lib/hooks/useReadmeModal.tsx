@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { RefObject, useRef, useState } from 'react'
+import { useOnClickOutside } from 'usehooks-ts'
 
+import Backdrop from '@components/common/Backdrop'
 import Readme from '@components/common/Readme'
 import { ProjectDetailType } from '@public/data/project/deatils'
 
@@ -8,6 +10,7 @@ import useScrollLock from './useScrollLock'
 const useReadmeModal = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [modalData, setModalData] = useState<ProjectDetailType | undefined>()
+  const ref = useRef<HTMLDivElement>(null)
 
   const { lockScroll, unLockScroll } = useScrollLock()
 
@@ -20,6 +23,7 @@ const useReadmeModal = () => {
     unLockScroll()
     setIsOpen(false)
   }
+  useOnClickOutside(ref as RefObject<HTMLElement>, handleClose)
 
   interface ModalProps {
     onConfirm?: () => void
@@ -28,7 +32,14 @@ const useReadmeModal = () => {
    * Actual Modal Component to Use
    */
   const Modal = ({ onConfirm }: ModalProps) => {
-    return <Readme isOpen={isOpen} data={modalData} handleClose={handleClose} onConfirm={onConfirm} />
+    return isOpen ? (
+      <>
+        <Readme data={modalData} ref={ref} handleClose={handleClose} onConfirm={onConfirm} />
+        <Backdrop />
+      </>
+    ) : (
+      <></>
+    )
   }
   return {
     isOpen,

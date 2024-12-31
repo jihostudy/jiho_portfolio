@@ -1,28 +1,30 @@
 import Link from 'next/link'
-import React, { ReactNode } from 'react'
+import React, { forwardRef, ReactNode } from 'react'
 
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
 import { ContributionType, MembersType, ProjectDetailType } from '@public/data/project/deatils'
 
 interface ReadmeProps {
-  isOpen: boolean
   data: ProjectDetailType | undefined
   handleClose: () => void
   onConfirm?: () => void
 }
 
-const Readme = ({ isOpen, data, handleClose, onConfirm }: ReadmeProps): ReactNode => {
-  if (isOpen && data) {
+const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onConfirm }, ref) => {
+  if (data) {
     const { title, duration, url, github, background, contribution, report, stacks, members } = data
     return (
-      <div className='fixed top-1/2 z-20 h-[85dvh] w-1/2 -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black bg-jhWhite01'>
-        <div className='flex items-center justify-between rounded-t-xl bg-jhBlack01 px-5 py-3'>
-          <span className='text-2xl font-bold text-jhWhite01'>Readme.md</span>
+      <div
+        ref={ref}
+        className='scrollbar-hide fixed top-1/2 z-30 h-[90dvh] w-1/2 -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black'
+      >
+        <div className='sticky top-0 flex items-center justify-between rounded-t-xl bg-jhBlack01 px-5 py-3'>
+          <span className='text-xl font-bold text-jhWhite01'>Readme.md</span>
           <LucideIcon name='X' onClick={handleClose} className='text-jhWhite01' size={26} />
         </div>
 
-        <div className='mt-4 flex flex-col items-start justify-start px-7 py-3'>
+        <div className='flex flex-col items-start justify-start bg-jhWhite01 px-7 pb-3 pt-4'>
           <div className='flex items-end justify-start gap-6'>
             <span className='text-2xl font-bold'>{title}</span>
             <span className='text-sm'>{duration}</span>
@@ -80,7 +82,9 @@ const Readme = ({ isOpen, data, handleClose, onConfirm }: ReadmeProps): ReactNod
     )
   }
   return null
-}
+})
+// displayName 설정
+Readme.displayName = 'Readme'
 
 export default Readme
 
