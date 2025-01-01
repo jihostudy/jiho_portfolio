@@ -31,14 +31,18 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
           </div>
 
           <div className='flex items-center justify-start gap-6 py-4'>
-            <Link href={url} target='_blank' className='flex items-center justify-center gap-2'>
-              <LucideIcon name='Link' />
-              <span className='text-xs text-jhBlue02 lg:text-base'>배포 URL</span>
-            </Link>
-            <Link href={github} target='_blank' className='flex items-center justify-center gap-2'>
-              <LucideIcon name='Github' />
-              <span className='text-xs lg:text-base'>깃허브</span>
-            </Link>
+            {url && (
+              <Link href={url} target='_blank' className='flex items-center justify-center gap-2'>
+                <LucideIcon name='Link' />
+                <span className='text-xs text-jhBlue02 lg:text-base'>배포 URL</span>
+              </Link>
+            )}
+            {github && (
+              <Link href={github} target='_blank' className='flex items-center justify-center gap-2'>
+                <LucideIcon name='Github' />
+                <span className='text-xs lg:text-base'>깃허브</span>
+              </Link>
+            )}
           </div>
 
           <div className='h-[1px] w-full bg-jhBlack01 lg:mb-6' />

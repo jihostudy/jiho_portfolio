@@ -12,8 +12,8 @@ export type MembersType = {
 export type ProjectDetailType = {
   title: string
   duration: string
-  url: string
-  github: string
+  url?: string
+  github?: string
   background: string
   contribution: Array<ContributionType>
   report: string

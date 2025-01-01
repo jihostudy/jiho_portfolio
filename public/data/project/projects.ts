@@ -28,6 +28,7 @@ import { details as GalleryDetails } from './details/gallery'
 import { details as PortfolioDetails } from './details/portfolio'
 import { details as SoKKDetails } from './details/sokk'
 import { details as TraBookDetails } from './details/trabook'
+import { details as xv6Details } from './details/xv6'
 
 export type ProjectType = {
   thumbnail: StaticImageData
@@ -116,7 +117,7 @@ const project_xv6: ProjectType = {
   description: 'MIT의 학습용 OS인 xv6 기능을 수정 • 강화',
   stacks: [CIcon],
   isWebProject: false,
-  modalDetails: TraBookDetails,
+  modalDetails: xv6Details,
 }
 
 const project_ipv4: ProjectType = {
