@@ -26,6 +26,7 @@ import { details as CatchDetails } from './details/catch'
 import { details as ConcoursDetails } from './details/concours'
 import { details as GalleryDetails } from './details/gallery'
 import { details as ipv4Details } from './details/ipv4'
+import { details as kakaoTalkDetails } from './details/kakaotalk'
 import { details as PortfolioDetails } from './details/portfolio'
 import { details as SoKKDetails } from './details/sokk'
 import { details as TraBookDetails } from './details/trabook'
@@ -100,6 +101,16 @@ const project_catch: ProjectType = {
   modalDetails: CatchDetails,
 }
 
+const project_kakaotalk: ProjectType = {
+  thumbnail: ThumbNailImageKakao,
+  title: 'KakaoTalk Clone Coding',
+  duration: '23. 08 ~ 24. 11',
+  description: '풀스택 카카오톡 클론 코딩',
+  stacks: [JavascriptIcon, FastAPIIcon],
+  isWebProject: true,
+  modalDetails: kakaoTalkDetails,
+}
+
 // const project_vscode: ProjectType = {
 //   thumbnail: ThumbNailImageVSCode,
 //   title: 'VSCode Blog Template',
@@ -129,16 +140,6 @@ const project_ipv4: ProjectType = {
   stacks: [CIcon],
   isWebProject: false,
   modalDetails: ipv4Details,
-}
-
-const project_kakaotalk: ProjectType = {
-  thumbnail: ThumbNailImageKakao,
-  title: 'KakaoTalk Clone Coding',
-  duration: '23. 08 ~ 24. 11',
-  description: '풀스택 카카오톡 클론 코딩',
-  stacks: [JavascriptIcon, FastAPIIcon],
-  isWebProject: true,
-  modalDetails: TraBookDetails,
 }
 
 export const PROJECTS: ProjectType[] = [
