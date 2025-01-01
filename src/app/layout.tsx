@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import Footer from '@components/common/Footer'
 import { cn } from '@lib/utils'
 import { bebasNeue, montserrat, pretendard } from '@public/fonts/font'
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
