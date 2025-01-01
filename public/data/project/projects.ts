@@ -6,7 +6,6 @@ import ThumbNailImageSokk from '@public/image/projects/p2-sokk/thumbnail.png'
 import ThumbNailImageConcour from '@public/image/projects/p3-concours/thumbnail.png'
 import ThumbNailImageGallery from '@public/image/projects/p4-gallery/thumbnail.png'
 import ThumbNailImageCatch from '@public/image/projects/p5-catch/thumbnail.png'
-import ThumbNailImageVSCode from '@public/image/projects/p6-vscode/thumbnail.png'
 import ThumbNailImageXV6 from '@public/image/projects/p7-xv6/thumbnail.svg'
 import ThumbNailImageNetwork from '@public/image/projects/p8-network/thumbnail.png'
 import ThumbNailImageKakao from '@public/image/projects/p9-kakaotalk/thumbnail.png'
@@ -23,6 +22,7 @@ import JavascriptIcon from '@public/image/stacks/language/javascript.png'
 import TypescriptIcon from '@public/image/stacks/language/typescript.png'
 
 import { ProjectDetailType } from './details'
+import { details as CatchDetails } from './details/catch'
 import { details as ConcoursDetails } from './details/concours'
 import { details as GalleryDetails } from './details/gallery'
 import { details as PortfolioDetails } from './details/portfolio'
@@ -95,18 +95,18 @@ const project_catch: ProjectType = {
   description: '대학로 행사 및 학회 전시 프로젝트',
   stacks: [JavascriptIcon, ReactIcon, FramerMotionIcon],
   isWebProject: true,
-  modalDetails: TraBookDetails,
+  modalDetails: CatchDetails,
 }
 
-const project_vscode: ProjectType = {
-  thumbnail: ThumbNailImageVSCode,
-  title: 'VSCode Blog Template',
-  duration: '23. 04 ~ 24. 06',
-  description: '개발자를 위한 VSCode 형태의 블로그 템플릿',
-  stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FirebaseIcon, ZustandIcon],
-  isWebProject: true,
-  modalDetails: TraBookDetails,
-}
+// const project_vscode: ProjectType = {
+//   thumbnail: ThumbNailImageVSCode,
+//   title: 'VSCode Blog Template',
+//   duration: '23. 04 ~ 24. 06',
+//   description: '개발자를 위한 VSCode 형태의 블로그 템플릿',
+//   stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FirebaseIcon, ZustandIcon],
+//   isWebProject: true,
+//   modalDetails: TraBookDetails,
+// }
 
 // 웹 프로젝트 외
 const project_xv6: ProjectType = {
@@ -146,7 +146,7 @@ export const PROJECTS: ProjectType[] = [
   project_concour,
   project_gallery,
   project_catch,
-  project_vscode,
+  // project_vscode,
   project_xv6,
   project_ipv4,
   project_kakaotalk,
