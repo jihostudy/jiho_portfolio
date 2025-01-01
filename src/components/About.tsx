@@ -29,7 +29,10 @@ const EXTERNAL_LINKS = {
 }
 const About = ({ className }: AboutProps): ReactNode => {
   return (
-    <section className={cn(className, 'grid grid-cols-1 gap-10 lg:grid-cols-[3fr,7fr] lg:grid-rows-1 lg:gap-6')}>
+    <section
+      id={'About'}
+      className={cn(className, 'grid grid-cols-1 gap-10 lg:grid-cols-[3fr,7fr] lg:grid-rows-1 lg:gap-6')}
+    >
       <div className='flex w-full flex-col items-center justify-start'>
         <Image alt='profile-image' src={ProfileImage} className='w-3/5 min-w-44 lg:w-full lg:rounded-2xl' />
         <nav className='mt-4 flex items-center justify-center gap-8 text-xs font-bold lg:text-base'>

@@ -9,7 +9,7 @@ interface SkillsProps {
 
 const Skills = ({ className }: SkillsProps): ReactNode => {
   return (
-    <section className={cn(className, 'flex flex-col items-center justify-start')}>
+    <section id={'Skills'} className={cn(className, 'flex flex-col items-center justify-start')}>
       <p className='font-montserrat text-lg font-bold lg:text-2xl'>Skills</p>
       <p className='my-2 text-sm font-semibold lg:text-base'>제가 사용해온 입실론들입니다.</p>
 

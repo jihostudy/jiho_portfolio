@@ -19,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn(pretendard.variable, bebasNeue.variable, montserrat.variable)}>
+      <body
+        className={cn(
+          pretendard.variable,
+          bebasNeue.variable,
+          montserrat.variable,
+          'relative flex flex-col items-center justify-start',
+        )}
+      >
         <Header />
         {children}
       </body>

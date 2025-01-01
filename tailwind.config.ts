@@ -74,7 +74,9 @@ const config = {
       height: {
         '9/10': '90dvh',
       },
-
+      boxShadow: {
+        all: '0 0 0.5rem 0 rgba(68, 68, 68, .4)',
+      },
       aspectRatio: {
         '3/2': '3 / 2',
       },

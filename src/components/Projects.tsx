@@ -33,7 +33,7 @@ const Projects = ({ className }: ProjectsProps): ReactNode => {
   })
 
   return (
-    <section className={cn(className, 'flex flex-col items-center justify-start')}>
+    <section id={'Projects'} className={cn(className, 'flex flex-col items-center justify-start')}>
       <p className='font-montserrat text-lg font-bold lg:text-2xl'>Projects</p>
       <p className='my-2 text-sm font-semibold lg:text-base'>제가 만들어온 입실론들입니다.</p>
       <p className='text-sm font-semibold lg:text-base'>* 프로젝트를 클릭해서 상세 내용을 확인해주세요</p>

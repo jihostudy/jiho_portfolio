@@ -5,6 +5,7 @@ import Backdrop from '@components/common/Backdrop'
 import Readme from '@components/common/Readme'
 import { ProjectDetailType } from '@public/data/project/details'
 
+import useEscClose from './useEscCLose'
 import useScrollLock from './useScrollLock'
 
 const useReadmeModal = () => {
@@ -23,7 +24,9 @@ const useReadmeModal = () => {
     unLockScroll()
     setIsOpen(false)
   }
+
   useOnClickOutside(ref as RefObject<HTMLElement>, handleClose)
+  useEscClose(isOpen, handleClose)
 
   interface ModalProps {
     onConfirm?: () => void
