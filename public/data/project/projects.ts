@@ -24,6 +24,7 @@ import TypescriptIcon from '@public/image/stacks/language/typescript.png'
 
 import { ProjectDetailType } from './details'
 import { details as ConcoursDetails } from './details/concours'
+import { details as GalleryDetails } from './details/gallery'
 import { details as PortfolioDetails } from './details/portfolio'
 import { details as SoKKDetails } from './details/sokk'
 import { details as TraBookDetails } from './details/trabook'
@@ -84,7 +85,7 @@ const project_gallery: ProjectType = {
   description: '개발 동아리 홍보 및 주점 이벤트 사이트',
   stacks: [JavascriptIcon, ReactIcon, TailwindCSSIcon, FirebaseIcon],
   isWebProject: true,
-  modalDetails: TraBookDetails,
+  modalDetails: GalleryDetails,
 }
 
 const project_catch: ProjectType = {
