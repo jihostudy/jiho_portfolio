@@ -6,6 +6,7 @@ export type MembersType = {
   frontend: string
   backend?: string
   AI?: string
+  design?: string
 }
 
 export type ProjectDetailType = {

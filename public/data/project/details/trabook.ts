@@ -26,7 +26,7 @@ const contribution: Array<ContributionType> = [
 
 export const details: ProjectDetailType = {
   title: 'TraBook 여행 플래너',
-  duration: '2024. 10 ~ 2024. 12',
+  duration: '2024. 07 ~ 2024. 10',
   url: 'https://www.trabook.site/',
   github: 'https://github.com/Tra-Book/Frontend',
   background: `우리는 여행을 계획할 때 많은 정보를 서핑한다.<br /> 네이버 지도, 카카오 지도, 구글 지도, 블로그, 유튜브 등 다양한 미디어의 정보를 종합하여 방문할 장소를 판단한다.

@@ -17,7 +17,7 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
     return (
       <div
         ref={ref}
-        className='h-9/10 scrollbar-hide fixed top-1/2 z-30 w-[90%] -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black lg:w-1/2 lg:min-w-[700px]'
+        className='fixed top-1/2 z-30 h-9/10 w-[90%] -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black scrollbar-hide lg:w-1/2 lg:min-w-[700px]'
       >
         <div className='sticky top-0 z-10 flex items-center justify-between rounded-t-xl bg-jhBlack01 px-5 py-3'>
           <span className='text-base font-bold text-jhWhite01 lg:text-xl'>Readme.md</span>
@@ -33,7 +33,7 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
           <div className='flex items-center justify-start gap-6 py-4'>
             <Link href={url} target='_blank' className='flex items-center justify-center gap-2'>
               <LucideIcon name='Link' />
-              <span className='text-jhBlue02 text-xs lg:text-base'>배포 URL</span>
+              <span className='text-xs text-jhBlue02 lg:text-base'>배포 URL</span>
             </Link>
             <Link href={github} target='_blank' className='flex items-center justify-center gap-2'>
               <LucideIcon name='Github' />
@@ -125,7 +125,7 @@ const ContributionSection = ({ title, icon, data, className }: ContributionSecti
       <div className='relative ml-2 flex w-full flex-col gap-4'>
         {data.map((contribute, index) => (
           <div key={index} className='flex flex-col gap-2'>
-            <p className='bg-jhGray01 w-full rounded-sm px-2 py-1 font-semibold'>{contribute.summary}</p>
+            <p className='w-full rounded-sm bg-jhGray01 px-2 py-1 font-semibold'>{contribute.summary}</p>
             <ul className='list-inside list-disc'>
               {contribute.description.map((desc, idx) => (
                 <li key={idx} className='py-1 pl-4'>
@@ -158,7 +158,8 @@ const TeamMemberSection = ({ title, icon, data, className }: TeamMemberSectionPr
       <ul className='relative ml-2 flex w-full list-inside list-disc flex-col gap-2'>
         <li className='pl-4'>Frontend: {data.frontend}</li>
         {data.backend && <li className='pl-4'>Backend: {data.backend}</li>}
-        {data.AI && <li>AI: {data.AI}</li>}
+        {data.AI && <li className='pl-4'>AI: {data.AI}</li>}
+        {data.design && <li className='pl-4'>Design: {data.design}</li>}
       </ul>
     </div>
   )

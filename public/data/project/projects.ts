@@ -21,9 +21,11 @@ import ZustandIcon from '@public/image/stacks/frontend/zustand.webp'
 import CIcon from '@public/image/stacks/language/c.png'
 import JavascriptIcon from '@public/image/stacks/language/javascript.png'
 import TypescriptIcon from '@public/image/stacks/language/typescript.png'
+
 import { ProjectDetailType } from './details'
-import { details as TraBookDetails } from './details/trabook'
 import { details as PortfolioDetails } from './details/portfolio'
+import { details as SoKKDetails } from './details/sokk'
+import { details as TraBookDetails } from './details/trabook'
 
 export type ProjectType = {
   thumbnail: StaticImageData
@@ -52,7 +54,7 @@ const project_pwa: ProjectType = {
   description: '성균관대학교 SW 라운지 좌석 • 라운지 관리 시스템',
   stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, TanstackQueryIcon, ZustandIcon],
   isWebProject: true,
-  modalDetails: PortfolioDetails,
+  modalDetails: SoKKDetails,
 }
 const project_trabook: ProjectType = {
   thumbnail: ThumbNailImageTraBook,
