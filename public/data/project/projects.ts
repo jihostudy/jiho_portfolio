@@ -23,6 +23,7 @@ import JavascriptIcon from '@public/image/stacks/language/javascript.png'
 import TypescriptIcon from '@public/image/stacks/language/typescript.png'
 
 import { ProjectDetailType } from './details'
+import { details as ConcoursDetails } from './details/concours'
 import { details as PortfolioDetails } from './details/portfolio'
 import { details as SoKKDetails } from './details/sokk'
 import { details as TraBookDetails } from './details/trabook'
@@ -73,7 +74,7 @@ const project_concour: ProjectType = {
   description: '성균관대학교 무용학과 콩쿨 접수 • 공지 사이트',
   stacks: [TypescriptIcon, NextJSIcon, TailwindCSSIcon, FirebaseIcon, ZustandIcon],
   isWebProject: true,
-  modalDetails: TraBookDetails,
+  modalDetails: ConcoursDetails,
 }
 
 const project_gallery: ProjectType = {
