@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react'
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
 import GithubImage from '@public/image/github.png'
-import ProfileImage from '@public/image/profile_image.svg'
+import ProfileImage from '@public/image/profile_image.webp'
 import TistoryImage from '@public/image/tistory.png'
 
 interface AboutProps {
@@ -34,7 +34,14 @@ const About = ({ className }: AboutProps): ReactNode => {
       className={cn(className, 'grid grid-cols-1 gap-10 lg:grid-cols-[3fr,7fr] lg:grid-rows-1 lg:gap-6')}
     >
       <div className='flex w-full flex-col items-center justify-start'>
-        <Image alt='profile-image' src={ProfileImage} className='w-3/5 min-w-44 lg:w-full lg:rounded-2xl' />
+        <Image
+          alt='profile-image'
+          priority={true}
+          placeholder='blur'
+          src={ProfileImage}
+          className='w-3/5 min-w-44 lg:w-full'
+          sizes='60vw, (min-width: 1024px) 100vw'
+        />
         <nav className='mt-4 flex items-center justify-center gap-8 text-xs font-bold lg:text-base'>
           <Link
             href={EXTERNAL_LINKS.github}
