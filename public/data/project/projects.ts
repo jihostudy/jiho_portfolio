@@ -25,6 +25,7 @@ import { ProjectDetailType } from './details'
 import { details as CatchDetails } from './details/catch'
 import { details as ConcoursDetails } from './details/concours'
 import { details as GalleryDetails } from './details/gallery'
+import { details as ipv4Details } from './details/ipv4'
 import { details as PortfolioDetails } from './details/portfolio'
 import { details as SoKKDetails } from './details/sokk'
 import { details as TraBookDetails } from './details/trabook'
@@ -127,7 +128,7 @@ const project_ipv4: ProjectType = {
   description: 'WireShark를 이용하여 IPv4 • Ipv6 패킷 분석, DNS통신 및 소켓 프로그래밍 구현',
   stacks: [CIcon],
   isWebProject: false,
-  modalDetails: TraBookDetails,
+  modalDetails: ipv4Details,
 }
 
 const project_kakaotalk: ProjectType = {
@@ -136,7 +137,7 @@ const project_kakaotalk: ProjectType = {
   duration: '23. 08 ~ 24. 11',
   description: '풀스택 카카오톡 클론 코딩',
   stacks: [JavascriptIcon, FastAPIIcon],
-  isWebProject: false,
+  isWebProject: true,
   modalDetails: TraBookDetails,
 }
 
@@ -147,8 +148,8 @@ export const PROJECTS: ProjectType[] = [
   project_concour,
   project_gallery,
   project_catch,
+  project_kakaotalk,
   // project_vscode,
   project_xv6,
   project_ipv4,
-  project_kakaotalk,
 ]
