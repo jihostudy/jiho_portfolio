@@ -104,7 +104,7 @@ const project_catch: ProjectType = {
 const project_kakaotalk: ProjectType = {
   thumbnail: ThumbNailImageKakao,
   title: 'KakaoTalk Clone Coding',
-  duration: '23. 08 ~ 24. 11',
+  duration: '23. 08 ~ 23. 11',
   description: '풀스택 카카오톡 클론 코딩',
   stacks: [JavascriptIcon, FastAPIIcon],
   isWebProject: true,

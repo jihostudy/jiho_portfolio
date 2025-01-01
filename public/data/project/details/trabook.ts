@@ -45,5 +45,6 @@ export const details: ProjectDetailType = {
   members: {
     frontend: '김지호(Team Leader), 신진건',
     backend: '김도현, 안윤지, 한용준, 황수영',
+    design: '김지호',
   },
 }
