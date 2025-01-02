@@ -1,6 +1,7 @@
 'use client'
+import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
-import React, { ReactNode, useEffect } from 'react'
+import React, { ReactNode } from 'react'
 import { useToggle } from 'usehooks-ts'
 
 import LucideIcon from '@lib/icons/LucideIcon'
@@ -11,14 +12,6 @@ export const LINKS = ['About', 'Skills', 'Projects', 'Contact']
 const Header = (): ReactNode => {
   const [value, toggle, setValue] = useToggle(false)
 
-  useEffect(() => {
-    console.log(value)
-  }, [value])
-
-  const test = () => {
-    console.log('this is by navbar ')
-    toggle()
-  }
   return (
     <header
       className={cn(
@@ -33,7 +26,7 @@ const Header = (): ReactNode => {
 
       <MobileNavBar
         isOpen={value}
-        onClick={test}
+        onClick={toggle}
         className='absolute right-1/2 top-full block translate-x-1/2 lg:hidden'
       />
       <DesktopNavBar className='hidden lg:block' />
@@ -50,33 +43,84 @@ interface MobileNavBarProps {
   className?: string
 }
 
+// animations
+const list = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { when: 'beforeChildren', staggerChildren: 0.2 },
+  },
+  exit: {
+    opacity: 0,
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0 },
+}
 const MobileNavBar = ({ isOpen, onClick, className }: MobileNavBarProps): ReactNode => {
   // const ref = useRef<HTMLElement>(null)
   // useOnClickOutside(ref as RefObject<HTMLElement>, onClick)
-  return isOpen ? (
-    <nav
-      // ref={ref}
-      onClick={onClick}
-      className={cn('w-full rounded-lg bg-jhWhite01 px-6 font-montserrat font-semibold opacity-80', className)}
-    >
-      <ul className='flex w-full flex-col items-center justify-start text-lg'>
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.nav
+          initial='hidden'
+          animate='visible'
+          exit='exit'
+          variants={list}
+          // ref={ref}
+          onClick={onClick}
+          className={cn('w-full rounded-lg bg-jhWhite01 px-6 font-montserrat font-semibold', className)}
+        >
+          <ul className='flex w-full flex-col items-center justify-start text-lg'>
+            {LINKS.map((link, index) => (
+              <motion.li
+                key={link}
+                variants={item}
+                className={cn(
+                  'w-full cursor-pointer py-2 text-center',
+                  index !== LINKS.length - 1 && 'border-b-[1px] border-solid border-jhGray01',
+                )}
+              >
+                <Link className='block w-full' href={`#${LINKS[index]}`}>
+                  {link}
+                </Link>
+              </motion.li>
+            ))}
+          </ul>
+          {/* <Motion
+        tag='ul'
+        animation={{
+          variants: list,
+        }}
+        className='flex w-full flex-col items-center justify-start text-lg'
+      >
         {LINKS.map((link, index) => (
-          <li
+          <Motion
             key={link}
+            tag='li'
+            animation={{
+              variants: item,
+            }}
             className={cn(
-              'cursor-pointer py-2 text-center',
+              'w-full cursor-pointer py-2 text-center',
               index !== LINKS.length - 1 && 'border-b-[1px] border-solid border-jhGray01',
             )}
           >
             <Link className='block w-full' href={`#${LINKS[index]}`}>
               {link}
             </Link>
-          </li>
+          </Motion>
         ))}
-      </ul>
-    </nav>
-  ) : (
-    <></>
+      </Motion> */}
+        </motion.nav>
+      )}
+    </AnimatePresence>
   )
 }
 interface DesktopNavBarProps {
