@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React, { forwardRef, ReactNode } from 'react'
 
+import { fadeIn } from '@lib/animation/animation'
+import { Motion } from '@lib/animation/MotionWrapper'
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
 import { ContributionType, MembersType, ProjectDetailType } from '@public/data/project/details'
@@ -15,7 +17,9 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
   if (data) {
     const { title, duration, url, github, background, contribution, report, stacks, members } = data
     return (
-      <div
+      <Motion
+        tag='div'
+        animation={fadeIn(undefined, undefined, 0.8)}
         ref={ref}
         className='fixed top-1/2 z-30 h-9/10 w-[90%] -translate-y-1/2 overflow-y-auto rounded-xl border border-solid border-black scrollbar-hide lg:w-1/2 lg:min-w-[700px]'
       >
@@ -82,7 +86,7 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
             className='my-5'
           />
         </div>
-      </div>
+      </Motion>
     )
   }
   return null

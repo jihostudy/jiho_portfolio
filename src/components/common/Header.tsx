@@ -49,7 +49,7 @@ const list = {
     opacity: 0,
   },
   visible: {
-    opacity: 1,
+    opacity: 0.8,
     transition: { when: 'beforeChildren', staggerChildren: 0.2 },
   },
   exit: {

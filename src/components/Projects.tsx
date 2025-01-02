@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import React, { ReactNode, useState } from 'react'
 
+import { fadeInView } from '@lib/animation/animation'
+import { Motion } from '@lib/animation/MotionWrapper'
 import useReadmeModal from '@lib/hooks/useReadmeModal'
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
@@ -63,7 +65,12 @@ const ProjectCard = ({ data, onClick, className }: ProjectCardProps): ReactNode 
   const { thumbnail, title, duration, description, stacks } = data
 
   return (
-    <li onClick={onClick} className={cn('relative flex flex-col items-start justify-start', className)}>
+    <Motion
+      tag='li'
+      animation={fadeInView(0, 0, 1.5, 0, true)}
+      onClick={onClick}
+      className={cn('relative flex flex-col items-start justify-start', className)}
+    >
       <Image
         alt='project-thumbnail'
         src={thumbnail}
@@ -87,6 +94,6 @@ const ProjectCard = ({ data, onClick, className }: ProjectCardProps): ReactNode 
           ))}
         </div>
       </div>
-    </li>
+    </Motion>
   )
 }

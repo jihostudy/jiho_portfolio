@@ -19,12 +19,17 @@ export const fadeIn = (
   once: boolean = false, // 자동 재실행 여부
 ): partialAnimation => {
   return {
-    initial: { opacity: 0, x: offsetX ? offsetX : 0, y: offsetY ? offsetY : 0 },
-    animate: { opacity: 1, x: 0, y: 0 },
+    initial: {
+      opacity: 0,
+      ...(offsetX !== undefined ? { x: offsetX } : {}),
+      ...(offsetY !== undefined ? { y: offsetY } : {}),
+    },
+    animate: { opacity: 1, ...(offsetX !== undefined ? { x: 0 } : {}), ...(offsetY !== undefined ? { y: 0 } : {}) },
     transition: { duration, delay },
     viewport: { once },
   }
 }
+
 export const fadeInView = (
   offsetX?: number,
   offsetY?: number,
@@ -33,7 +38,11 @@ export const fadeInView = (
   once: boolean = false,
 ): partialAnimation => {
   return {
-    initial: { opacity: 0, x: offsetX ? offsetX : 0, y: offsetY ? offsetY : 0 },
+    initial: {
+      opacity: 0,
+      ...(offsetX !== undefined ? { x: offsetX } : {}),
+      ...(offsetY !== undefined ? { y: offsetY } : {}),
+    },
     whileInView: { opacity: 1, x: 0, y: 0 },
     transition: { duration, delay },
     viewport: { once },
@@ -48,7 +57,11 @@ export const fadeOut = (
 ): partialAnimation => {
   return {
     initial: { opacity: 1, x: 0, y: 0 },
-    animate: { opacity: 0, x: offsetX ? offsetX : 0, y: offsetY ? offsetY : 0 },
+    animate: {
+      opacity: 0,
+      ...(offsetX !== undefined ? { x: offsetX } : {}),
+      ...(offsetY !== undefined ? { y: offsetY } : {}),
+    },
     transition: { duration, delay },
   }
 }
