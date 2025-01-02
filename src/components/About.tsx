@@ -4,9 +4,9 @@ import React, { ReactNode } from 'react'
 
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
-import GithubImage from '@public/image/github.png'
+import GithubImage from '@public/image/github.webp'
 import ProfileImage from '@public/image/profile_image.webp'
-import TistoryImage from '@public/image/tistory.png'
+import TistoryImage from '@public/image/tistory.webp'
 
 interface AboutProps {
   className?: string
@@ -35,12 +35,13 @@ const About = ({ className }: AboutProps): ReactNode => {
     >
       <div className='flex w-full flex-col items-center justify-start'>
         <Image
+          src={ProfileImage}
           alt='profile-image'
           priority={true}
           placeholder='blur'
-          src={ProfileImage}
+          width={500}
           className='w-3/5 min-w-44 lg:w-full'
-          sizes='60vw, (min-width: 1024px) 100vw'
+          // sizes='60vw, (min-width: 1024px) 100vw'
         />
         <nav className='mt-4 flex items-center justify-center gap-8 text-xs font-bold lg:text-base'>
           <Link
