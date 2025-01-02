@@ -27,7 +27,7 @@ const Projects = ({ className }: ProjectsProps): ReactNode => {
           key={index}
           data={project}
           onClick={() => handleOpen(project.modalDetails)}
-          className='cursor-pointer overflow-hidden rounded-lg shadow-md hover:scale-105'
+          className='w-full cursor-pointer overflow-hidden rounded-lg shadow-md hover:scale-105'
         />
       )
   })
@@ -46,7 +46,7 @@ const Projects = ({ className }: ProjectsProps): ReactNode => {
         <span className='font-bold'>Web Project Only</span>
       </div>
 
-      <ul className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>{ProjectList}</ul>
+      <ul className='relative grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>{ProjectList}</ul>
       <Modal />
     </section>
   )
@@ -64,7 +64,18 @@ const ProjectCard = ({ data, onClick, className }: ProjectCardProps): ReactNode 
 
   return (
     <li onClick={onClick} className={cn('relative flex flex-col items-start justify-start', className)}>
-      <Image alt='project-thumbnail' src={thumbnail} className='aspect-3/2 w-full object-cover object-top' />
+      <Image
+        alt='project-thumbnail'
+        src={thumbnail}
+        placeholder='blur'
+        className='aspect-3/2 w-full object-cover object-top'
+      />
+      {/* <div
+        // alt='project-thumbnail'
+        // src={thumbnail}
+        // placeholder='blur'
+        className='aspect-3/2 w-full object-cover object-top'
+      /> */}
 
       <div className='flex flex-col items-start justify-start px-4 pb-4 pt-6'>
         <p className='font-bold'>{title}</p>
