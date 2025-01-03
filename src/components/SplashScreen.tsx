@@ -87,7 +87,7 @@ const SplashScreen = ({ onAnimationComplete }: SplashScreenProps): ReactNode => 
         animation={fadeIn(-40, 0, 1.2, 3, true)}
         className='self-start text-2xl font-bold underline decoration-yellow-300 decoration-solid decoration-4 underline-offset-4'
       >
-        입실론을 모아, 꿈을 향해 꾸준히
+        입실론을 모아, 꿈을 향해 꾸준히 🍀
       </Motion>
     </Motion>
   )
