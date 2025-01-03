@@ -7,7 +7,7 @@ import { useToggle } from 'usehooks-ts'
 import LucideIcon from '@lib/icons/LucideIcon'
 import { cn } from '@lib/utils'
 
-export const LINKS = ['About', 'Skills', 'Projects', 'Contact']
+export const LINKS = ['About', 'Skills', 'Projects']
 
 const Header = (): ReactNode => {
   const [value, toggle, setValue] = useToggle(false)

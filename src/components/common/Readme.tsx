@@ -28,7 +28,7 @@ const Readme = forwardRef<HTMLDivElement, ReadmeProps>(({ data, handleClose, onC
           <LucideIcon name='X' onClick={handleClose} className='text-jhWhite01' size={26} />
         </div>
 
-        <div className='flex flex-col items-start justify-start bg-jhWhite01 px-7 pb-3 pt-4'>
+        <div className='flex min-h-full flex-col items-start justify-start bg-jhWhite01 px-7 pb-3 pt-4'>
           <div className='flex items-end justify-start gap-6'>
             <span className='w-max text-lg font-bold lg:text-2xl'>{title}</span>
             <span className='text-xs lg:text-sm'>{duration}</span>
