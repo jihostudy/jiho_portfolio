@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { cn } from '@lib/utils'
 import { bebasNeue, montserrat, pretendard } from '@public/fonts/font'
+import { Analytics } from '@vercel/analytics/react'
 
 import './globals.css'
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   )
