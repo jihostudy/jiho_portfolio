@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import React, { ReactNode } from 'react'
 
 import { cn } from '@lib/utils'
@@ -9,7 +10,21 @@ interface SkillsProps {
 
 const Skills = ({ className }: SkillsProps): ReactNode => {
   return (
-    <section id={'Skills'} className={cn(className, 'flex flex-col items-center justify-start')}>
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: -50,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        delay: 0.8,
+      }}
+      id={'Skills'}
+      className={cn(className, 'flex flex-col items-center justify-start')}
+    >
       <p className='font-montserrat text-lg font-bold lg:text-2xl'>Skills</p>
       <p className='my-2 text-sm font-semibold lg:text-base'>제가 사용해온 입실론들입니다.</p>
 
@@ -104,7 +119,7 @@ const Skills = ({ className }: SkillsProps): ReactNode => {
           </div>
         </li>
       </ul>
-    </section>
+    </motion.section>
   )
 }
 

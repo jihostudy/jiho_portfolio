@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
@@ -29,7 +30,15 @@ const EXTERNAL_LINKS = {
 }
 const About = ({ className }: AboutProps): ReactNode => {
   return (
-    <section
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: -50,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
       id={'About'}
       className={cn(className, 'grid grid-cols-1 gap-10 lg:grid-cols-[3fr,7fr] lg:grid-rows-1 lg:gap-6')}
     >
@@ -105,7 +114,7 @@ const About = ({ className }: AboutProps): ReactNode => {
           </li>
         </ul>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
