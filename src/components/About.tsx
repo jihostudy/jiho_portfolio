@@ -13,6 +13,11 @@ interface AboutProps {
   className?: string
 }
 
+const EXTERNAL_LINKS = {
+  github: 'https://github.com/jihostudy',
+  blog: 'https://jihoplayground.tistory.com/',
+  NPMLibrary: 'https://github.com/jihostudy/useHooks',
+}
 const INTRODUCE = [
   <>안녕하세요! 개발자 김지호입니다.</>,
   <>
@@ -22,12 +27,21 @@ const INTRODUCE = [
     수학에서 입실론은 아주 작은 값이지만, <span className='font-bold'>이 작은 값들이 모여 큰 결과</span>를 만들어냅니다.
   </>,
   <>매일매일의 작은 노력과 배움을 통해 끊임없이 성장하며 더 뛰어난 개발자가 되기를 꿈꿉니다.</>,
+  <br key='line-split' />,
+  <>
+    관심사 분리가 철저한 코드를 작성하는 <span className='font-bold'>DX에 관심</span>이 많아,
+  </>,
+  <>
+    <Link
+      href={EXTERNAL_LINKS.NPMLibrary}
+      target='_blank'
+      className='cursor-pointer font-bold text-gray-500 underline underline-offset-4 hover:text-jhBlack01'
+    >
+      Custom Hook NPM Package (usehooks-jihostudy)
+    </Link>
+    를 제작해보고 있습니다.
+  </>,
 ]
-
-const EXTERNAL_LINKS = {
-  github: 'https://github.com/jihostudy',
-  blog: 'https://jihoplayground.tistory.com/',
-}
 const About = ({ className }: AboutProps): ReactNode => {
   return (
     <motion.section

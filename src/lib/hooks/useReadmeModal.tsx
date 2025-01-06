@@ -1,11 +1,11 @@
 import { RefObject, useRef, useState } from 'react'
+import { useEscClose } from 'usehooks-jihostudy'
 import { useOnClickOutside } from 'usehooks-ts'
 
 import Backdrop from '@components/common/Backdrop'
 import Readme from '@components/common/Readme'
 import { ProjectDetailType } from '@public/data/project/details'
 
-import useEscClose from './useEscCLose'
 import useScrollLock from './useScrollLock'
 
 const useReadmeModal = () => {
