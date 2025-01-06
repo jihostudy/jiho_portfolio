@@ -143,7 +143,7 @@ const project_ipv4: ProjectType = {
 }
 
 export const PROJECTS: ProjectType[] = [
-  project_portfolio,
+  // project_portfolio,
   project_pwa,
   project_trabook,
   project_concour,

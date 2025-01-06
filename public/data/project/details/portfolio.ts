@@ -2,12 +2,8 @@ import { ContributionType, ProjectDetailType } from '.'
 
 const contribution: Array<ContributionType> = [
   {
-    summary: 'Framer-Motion을 활용한 고도화된 애니메이션 제작',
+    summary: '작업 진행중입니다.',
     description: ['On-Progress'],
-  },
-  {
-    summary: 'SEO 최적화',
-    description: ['포토폴리오 사이트인 만큼 SEO 최적화를 위해 노력'],
   },
 ]
 
