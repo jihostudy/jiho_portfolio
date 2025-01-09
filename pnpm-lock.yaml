@@ -51,8 +51,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
       usehooks-jihostudy:
-        specifier: ^0.0.6
-        version: 0.0.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^0.0.8
+        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       usehooks-ts:
         specifier: ^3.1.0
         version: 3.1.0(react@19.0.0)
@@ -1878,8 +1878,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  usehooks-jihostudy@0.0.6:
-    resolution: {integrity: sha512-TGI+UOlwB+oS+LVCXkDM6mxyD+9+/2PJHLMRDSnFEBAOZxoujhWH+tnt5S8HNacB5XkToKSOdE+HnZLZKUr8gA==}
+  usehooks-jihostudy@0.0.8:
+    resolution: {integrity: sha512-zdjQ9dWH5GiffcLjqWumVH+KMdyVg27f2/iqdcOxyYwT3Gng7iuwyKAvw1/suBwHvMQwUK7Mdc5e+b2p0GcGXw==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -3865,7 +3865,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  usehooks-jihostudy@0.0.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  usehooks-jihostudy@0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)

@@ -1,6 +1,5 @@
 import { RefObject, useRef, useState } from 'react'
-import { useEscClose } from 'usehooks-jihostudy'
-import { useOnClickOutside } from 'usehooks-ts'
+import { useEscClose, useOutsideClick } from 'usehooks-jihostudy'
 
 import Backdrop from '@components/common/Backdrop'
 import Readme from '@components/common/Readme'
@@ -25,7 +24,7 @@ const useReadmeModal = () => {
     setIsOpen(false)
   }
 
-  useOnClickOutside(ref as RefObject<HTMLElement>, handleClose)
+  useOutsideClick(ref as RefObject<HTMLElement>, handleClose)
   useEscClose(isOpen, handleClose)
 
   interface ModalProps {

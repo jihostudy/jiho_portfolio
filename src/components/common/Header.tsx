@@ -1,7 +1,8 @@
 'use client'
 import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, RefObject, useRef } from 'react'
+import { useOutsideClick } from 'usehooks-jihostudy'
 import { useToggle } from 'usehooks-ts'
 
 import LucideIcon from '@lib/icons/LucideIcon'
@@ -12,6 +13,36 @@ export const LINKS = ['About', 'Skills', 'Projects']
 const Header = (): ReactNode => {
   const [value, toggle, setValue] = useToggle(false)
 
+  // useEffect(() => {
+  //   ;['touchstart', 'touchmove', 'touchend', 'mousedown', 'mousemove', 'mouseup', 'click'].forEach(eventType => {
+  //     document.addEventListener(eventType, event => {
+  //       console.log(`Event detected: ${eventType}`)
+  //       console.log(`Event target:`, event.target)
+  //     })
+  //   })
+  // }, [])
+
+  // useEffect(() => {
+  //   console.log('toggle value: ', value)
+  // }, [value])
+
+  const HamburgerButtonEvent = () => {
+    // console.log('hamburger button event')
+    // console.log(e.type)
+    toggle()
+  }
+
+  const NavbarOutsideEvent = () => {
+    // console.log('navbar outside event')
+    // console.log(event)
+
+    // console.log(event.type)
+    // event.stopImmediatePropagation()
+    // event.preventDefault()
+    // console.log('outside click executed')
+
+    toggle()
+  }
   return (
     <header
       className={cn(
@@ -22,11 +53,11 @@ const Header = (): ReactNode => {
       <Link href={'./'} className='flex h-full w-max max-w-xs items-center justify-start font-bebas text-3xl'>
         JIHOSTUDY
       </Link>
-      <LucideIcon name='Menu' size={35} className='lg:hidden' onMouseUp={toggle} />
+      <LucideIcon name='Menu' size={35} className='lg:hidden' onClick={HamburgerButtonEvent} />
 
       <MobileNavBar
         isOpen={value}
-        onClick={toggle}
+        onClose={NavbarOutsideEvent}
         className='absolute right-1/2 top-full block translate-x-1/2 lg:hidden'
       />
       <DesktopNavBar className='hidden lg:block' />
@@ -38,8 +69,7 @@ export default Header
 
 interface MobileNavBarProps {
   isOpen: boolean
-  onClick: () => void
-
+  onClose: (event: MouseEvent) => void
   className?: string
 }
 
@@ -62,9 +92,10 @@ const item = {
   visible: { opacity: 1, y: 0 },
   exit: { opacity: 0 },
 }
-const MobileNavBar = ({ isOpen, onClick, className }: MobileNavBarProps): ReactNode => {
-  // const ref = useRef<HTMLElement>(null)
-  // useOnClickOutside(ref as RefObject<HTMLElement>, onClick)
+const MobileNavBar = ({ isOpen, onClose, className }: MobileNavBarProps): ReactNode => {
+  const ref = useRef<HTMLElement>(null)
+  useOutsideClick(ref as RefObject<HTMLElement>, onClose, false)
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -73,8 +104,7 @@ const MobileNavBar = ({ isOpen, onClick, className }: MobileNavBarProps): ReactN
           animate='visible'
           exit='exit'
           variants={list}
-          // ref={ref}
-          onClick={onClick}
+          ref={ref}
           className={cn('w-full rounded-lg bg-jhWhite01 px-6 font-montserrat font-semibold', className)}
         >
           <ul className='flex w-full flex-col items-center justify-start text-lg'>
@@ -93,31 +123,6 @@ const MobileNavBar = ({ isOpen, onClick, className }: MobileNavBarProps): ReactN
               </motion.li>
             ))}
           </ul>
-          {/* <Motion
-        tag='ul'
-        animation={{
-          variants: list,
-        }}
-        className='flex w-full flex-col items-center justify-start text-lg'
-      >
-        {LINKS.map((link, index) => (
-          <Motion
-            key={link}
-            tag='li'
-            animation={{
-              variants: item,
-            }}
-            className={cn(
-              'w-full cursor-pointer py-2 text-center',
-              index !== LINKS.length - 1 && 'border-b-[1px] border-solid border-jhGray01',
-            )}
-          >
-            <Link className='block w-full' href={`#${LINKS[index]}`}>
-              {link}
-            </Link>
-          </Motion>
-        ))}
-      </Motion> */}
         </motion.nav>
       )}
     </AnimatePresence>
