@@ -31,6 +31,7 @@ const INTRODUCE = [
   <>
     관심사 분리가 철저한 코드를 작성하는 <span className='font-bold'>DX에 관심</span>이 많아,
   </>,
+
   <>
     <Link
       href={EXTERNAL_LINKS.NPMLibrary}
@@ -41,6 +42,10 @@ const INTRODUCE = [
     </Link>
     를 제작해보고 있습니다.
   </>,
+
+  <br key='line-split' />,
+
+  <>함께 개발에 대해 이야기할 수 있는 적극적 환경에서의 업무를 꿈꿉니다.</>,
 ]
 const About = ({ className }: AboutProps): ReactNode => {
   return (
@@ -102,7 +107,7 @@ const About = ({ className }: AboutProps): ReactNode => {
             </div>
             <div className='relative text-sm font-semibold'>
               성균관대학교 수학, 소프트웨어학(복수전공)
-              <div className='absolute -bottom-5 right-0 flex items-end text-xs font-bold'>GPA 4.27/4.5</div>
+              <div className='absolute -bottom-5 right-0 flex items-end text-xs font-bold'>SW GPA 4.27/4.5</div>
             </div>
           </li>
           <li className='flex items-center gap-6'>

@@ -133,12 +133,13 @@ const ContributionSection = ({ title, icon, data, className }: ContributionSecti
       <div className='relative ml-2 flex w-full flex-col gap-4'>
         {data.map((contribute, index) => (
           <div key={index} className='flex flex-col gap-2'>
-            <p className='w-full rounded-sm bg-jhGray01 px-2 py-1 font-semibold'>{contribute.summary}</p>
+            <p
+              className='w-full rounded-sm bg-jhGray01 px-2 py-1 font-semibold'
+              dangerouslySetInnerHTML={{ __html: contribute.summary }}
+            />
             <ul className='list-inside list-disc'>
               {contribute.description.map((desc, idx) => (
-                <li key={idx} className='py-1 pl-4'>
-                  {desc}
-                </li>
+                <li key={idx} className='py-1 pl-4' dangerouslySetInnerHTML={{ __html: desc }} />
               ))}
             </ul>
           </div>
