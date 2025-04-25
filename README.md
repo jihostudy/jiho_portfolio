@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 포토폴리오 웹사이트
 
-## Getting Started
+Next.js 기반의 개인 포토폴리오 웹사이트 **Leafresh**의 FE 저장소입니다.  
 
-First, run the development server:
+## [웹사이트 링크](https://www.jihostudy.site/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## 🔧 기술 스택
+
+| 분류       | 기술                          |
+|------------|-------------------------------|
+| Language   | TypeScript                    |
+| Framework  | React 19, Next.js 15          |
+| Styling    | Tailwindcss 3      |
+| 애니메이션    | motion (구 framer-motion)      |
+| 아이콘   | LucideIcon   |
+| 커스텀 훅   | usehooks-jhostudy |
+
+
+## 폴더 구조
+
+```
+.
+├── public
+│   ├── data
+│   │   └── project
+│   │       └── details
+│   ├── fonts
+│   └── image
+│       ├── projects      // 각 프로젝트 정적 저장소
+│       └── stacks        // 각 스택 정적 저장소
+└── src
+    ├── app               // 메인페이지
+    ├── components        // 사용 컴포넌트
+    │   └── common           // 공용 컴포넌트
+    └── lib               // 라이브러리
+        ├── animation        // 재사용 애니메이션 저장소
+        ├── colors           // Tailwind 기반의 사용색 저장소
+        ├── hooks            // 커스텀 훅 저장소
+        └── icons            // LucideIcon 사용 래퍼
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🥺 실행 방법
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+별도의 환경 변수 없이 동작합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. 설치
 
-## Learn More
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. 개발 서버 실행
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👥 팀원 (1人 개발)
 
-## Deploy on Vercel
+| 이름 | 역할 | GitHub |
+|------|------|--------|
+| 홍길동 | 팀장 / 프론트엔드 | [@jihostudy](https://github.com/jihostudy) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 라이선스
+
+MIT License
+
