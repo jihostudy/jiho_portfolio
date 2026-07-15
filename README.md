@@ -2,7 +2,7 @@
 
 Next.js 기반의 개인 포토폴리오 웹사이트 **Leafresh**의 FE 저장소입니다.  
 
-## [웹사이트 링크](https://www.jihostudy.site/)
+## [웹사이트 링크](https://www.kimlove.site/)
 
 
 ## 🔧 기술 스택
